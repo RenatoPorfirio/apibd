@@ -44,8 +44,7 @@ def db_insert(nome, cpf, data_nascimento):
 
 HTMLHOME = ''
 with open('index.html', 'r') as f:
-    for l in f.read():
-        HTMLHOME += l
+    HTMLHOME += f.read()
 
 #ROUTES====================================================================================
 
