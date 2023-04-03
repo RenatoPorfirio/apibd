@@ -24,10 +24,10 @@ Autor: Renato Porfirio Santos Xavier
                     - NAME: nome do banco de dados que deseja conectar-se;
     =>help.txt    : Texto do menu de ajuda da ferramenta;
     =>index.html  : Homepage do servidor da API, onde é possível testar o seu funcionamento;
-    #####################################################################################################################################
+    ######################################################################################
     O arquivo principal da aplicação é o apistart.py. Este, importa todos os módulos e arquivos necessários para o correto funcionamento.
     Para saber como utilizar a ferramenta, abra o arquivo help.txt ou execute o comando:
     python3 apistart.py --help
-    
+    -----------
     NOTA:As requisições são processadas no link: http://ec2-34-203-132-2.compute-1.amazonaws.com:5000/req.
          Em http://ec2-34-203-132-2.compute-1.amazonaws.com:5000, é possível acessar a homepage (index.html) para consultar ou adicionar dados.
