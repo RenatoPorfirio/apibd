@@ -1,0 +1,4 @@
+HOST localhost
+USER postgres
+PSWD teardrops2021
+NAME bdusuario

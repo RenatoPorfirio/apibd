@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>index</title>
+</head>
+<body>
+    <button onclick=cons()>Consultar usuário</button>
+    <button onclick=add()>Adicionar usuário</button>
+    <container id="con"></container>
+    <container id="con2"></container>
+</body>
+<script>
+    var cont = document.getElementById('con');
+    var HOST = '34.203.132.2:5000'
+    function cons(){
+        let txt = '<form id="form" method="get">cpf: <input type="text" name="cpf" placeholder="Apenas números"/><button type="submit">Enviar</button></form><br/>';
+        con.innerHTML = txt;
+        let form = document.getElementById('form');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const _data = new FormData(form);
+            let url = 'http://'+HOST+'/req?' + new URLSearchParams(_data).toString();
+            fetch(url)
+                .then(res => res.text())
+                .then(dat => {
+                    let elem = document.getElementById('con2');
+                    if(dat === '') elem.innerHTML = 'Usuário não encontrado na base de dados!';
+                    else{
+                        user = JSON.parse(dat);
+                        let tab = '<table border="1px"><tr><th>nome</th><th>cpf</th><th>data_nascimento</th></tr>';
+                        tab += '<tr><th>'+user['nome']+'</th><th>'+user['cpf']+'</th><th>'+user['data_nascimento']+'</th><tr>' 
+                        tab += '</table>'
+                        elem.innerHTML = tab;
+                    }
+                })
+                .catch(err => console.error(err));
+        });
+    }
+    function add(){
+        let txt = '<form id="form2" method="POST" action="http://'+HOST+'/req">';
+        txt += 'nome: <input type="text" name="nome"/><br/>';
+        txt += 'cpf: <input type="text" name="cpf" placeholder="Apenas números"/><br/>';
+        txt += 'data de nascimento: <input type="date" name="data_nascimento"/><br/>';
+        txt += '<button type="submit">Enviar</button></form><br/>';
+        con.innerHTML = txt;
+    }
+</script>
+</html>

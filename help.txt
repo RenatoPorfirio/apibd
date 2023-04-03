@@ -1,0 +1,6 @@
+
+#####AJUDA#####
+Para consultar o menu de ajuda (este): -h / --help
+Sintaxe de uso geral                 : python3 apistart.py "endereço no qual o servidor irá rodar" "porta"
+OBS: certifique-se de que o seu firewall permita o uso de endereço/porta solicitados, e se não há outra aplicação rodando na porta requisitada!
+
