@@ -28,6 +28,6 @@ A aplicação contém três arquivos auxiliares: dbconfig.txt, help.txt, index.h
  O arquivo principal da aplicação é o apistart.py. Este, importa todos os módulos e arquivos necessários para o correto funcionamento.
  Para saber como utilizar a ferramenta, abra o arquivo help.txt ou execute o comando:
  python3 apistart.py --help
- -----------
+ 
  NOTA:As requisições são processadas no link: http://ec2-34-203-132-2.compute-1.amazonaws.com:5000/req.
       Em http://ec2-34-203-132-2.compute-1.amazonaws.com:5000, é possível acessar a homepage (index.html) para consultar ou adicionar dados.
